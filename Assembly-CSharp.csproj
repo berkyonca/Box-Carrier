@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{19D8D0E0-2403-FCBA-DA40-264EFDE3E7EA}</ProjectGuid>
+    <ProjectGuid>{AAFB7696-7713-0BC8-3B74-12BFF8B29F94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,9 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Assets Folder\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Assets Folder\CharacterGenerator\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Assets Folder\CharacterGenerator\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Assets Folder\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\Game Folder\Scripts\Movement\RespawnBoxes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Assets Folder\BrokenVector\LowPolyShaders\README.txt" />
+    <None Include="Assets\Assets Folder\BrokenVector\LowPolyShaders\Shaders\LowPolyUnlitShader.shader" />
+    <None Include="Assets\Assets Folder\BrokenVector\LowPolyShaders\Shaders\LowPolyPBRShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -273,6 +279,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.34f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.34f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -627,65 +636,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{A60B167B-B198-7703-979C-9F668C5E2B5C}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
+      <Project>{A646CE4A-244C-B563-7227-A8CFB5359AA2}</Project>
+      <Name>Unity.DeviceSimulator.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{82DE9E11-9370-5AA9-C8C0-B61D7D368228}</Project>
+      <Project>{9175B33F-99ED-9075-555F-19A0134938C1}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
+      <Project>{6B401F85-1CE7-2B12-786C-BB79848800BF}</Project>
+      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{17EF8F3C-9528-9753-2E87-3E1FA7884D98}</Project>
+      <Project>{D59449B1-9AFB-1874-4AC8-462FD291D524}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{8A3B1B7B-65CF-B71B-BE29-960DA51F04F2}</Project>
+      <Project>{1D903522-F6D1-67AE-623B-34C0FE6129B6}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{D9B4D88E-03E5-BB49-C14C-4F28BDEABDCF}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{2B405151-9173-8CBF-F00A-62B58FED6FF5}</Project>
+      <Project>{4CD88953-9D49-6BD5-D9D6-EF3AEB596488}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{D81CDE04-AA5F-147C-91B1-34BBD3CDD73C}</Project>
+      <Project>{82946A90-186D-A644-5892-20D03EAA534C}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{D942BCA2-ECCD-E8C1-AFB0-C07BC2ED23F5}</Project>
+      <Project>{8BFDD299-D2C7-2527-1CBD-7D5DEC8CC33D}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.csproj">
+      <Project>{5624BF30-4A83-D8B6-2EEB-C83257FD81AE}</Project>
+      <Name>Unity.ProBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
+      <Project>{02D3D1D1-5F7A-064F-30B3-282455C49BCC}</Project>
+      <Name>Unity.ProBuilder.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{BE2DA78D-ED92-E044-E47B-2B3AFDB90DD0}</Project>
+      <Project>{B74CE7E7-FE40-A536-07EF-3B02AF5BFB67}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{0043E14D-224F-2EC5-5AA7-7D1F3F80B07F}</Project>
+      <Project>{3E9050EF-699C-64CB-F710-F75EB35A97E6}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ProGrids.Editor.csproj">
-      <Project>{53CB2B55-3119-107A-FD5F-BF182BD4DAFF}</Project>
+      <Project>{C3C13819-216D-AB22-8652-BF583D11690B}</Project>
       <Name>Unity.ProGrids.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.csproj">
-      <Project>{4D1B4F6C-BE77-E3FB-9438-BB38C56A6F4E}</Project>
-      <Name>Unity.ProBuilder</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.ProGrids.csproj">
-      <Project>{C0AD65D2-D689-542A-D3AE-F1B05676FDD5}</Project>
+      <Project>{DD8EDF6F-41E1-A0A0-9234-4B52E2C76A22}</Project>
       <Name>Unity.ProGrids</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
-      <Project>{4C060158-5003-348D-5D44-C9008B10AD58}</Project>
-      <Name>Unity.ProBuilder.AddOns.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
-      <Project>{318B2CD0-D4BD-9714-B036-D39FF4458EEA}</Project>
-      <Name>Unity.ProBuilder.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
-      <Project>{889EBFDC-8F33-10AF-F216-7F9DA7471DF4}</Project>
-      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
-      <Project>{19C623D7-686A-6DFF-63A7-FBBD1F80900B}</Project>
-      <Name>Unity.DeviceSimulator.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
