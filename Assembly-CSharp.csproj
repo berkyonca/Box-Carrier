@@ -60,6 +60,8 @@
     <Compile Include="Assets\Assets Folder\CharacterGenerator\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Assets Folder\CharacterGenerator\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Game Folder\Scripts\Movement\RespawnBoxes.cs" />
+    <Compile Include="Assets\Game Folder\Scripts\CollectManager.cs" />
+    <Compile Include="Assets\Game Folder\Scripts\TriggerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets Folder\BrokenVector\LowPolyShaders\README.txt" />
