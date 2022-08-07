@@ -49,7 +49,7 @@ public class RespawnBoxes : MonoBehaviour
                 _isPaletFull = false;
             }
 
-            yield return new WaitForSeconds(.3f);
+            yield return new WaitForSeconds(.4f);
 
 
         }
@@ -63,8 +63,6 @@ public class RespawnBoxes : MonoBehaviour
             Destroy(_boxList[_boxList.Count - 1]);
             _boxList.RemoveAt(_boxList.Count - 1);
         }
-
-
     }
 
 

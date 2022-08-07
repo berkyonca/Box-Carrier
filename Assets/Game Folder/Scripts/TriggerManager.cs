@@ -6,9 +6,16 @@ public class TriggerManager : MonoBehaviour
 {
     public delegate void OnCollectArea();
     public static event OnCollectArea OnBoxCollect;
+    public static RespawnBoxes respawnBoxes;
 
+    private bool _isCollecting, _isGiving;
 
-    private bool _isCollecting;
+    public delegate void OnDropArea();
+    public static event OnDropArea OnBoxGive;
+    public static WorkManager workerManager;
+
+    public delegate void OnMoneySection();
+    public static event OnMoneySection OnMoneyCollected;
 
     private void Start()
     {
@@ -24,7 +31,20 @@ public class TriggerManager : MonoBehaviour
             {
                 OnBoxCollect();
             }
+            if (_isGiving)
+            {
+                OnBoxGive();
+            }
             yield return new WaitForSeconds(.5f);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Money")
+        {
+            OnMoneyCollected();
+            Destroy(other.gameObject);
         }
     }
 
@@ -33,6 +53,12 @@ public class TriggerManager : MonoBehaviour
         if (other.tag == "CollectArea")
         {
             _isCollecting = true;
+            respawnBoxes = other.gameObject.GetComponent<RespawnBoxes>();
+        }
+        if (other.tag == "DropSection")
+        {
+            _isGiving = true;
+            workerManager = other.gameObject.GetComponent<WorkManager>();
         }
     }
 
@@ -41,9 +67,15 @@ public class TriggerManager : MonoBehaviour
         if (other.tag == "CollectArea")
         {
             _isCollecting = false;
+            respawnBoxes = null;
         }
 
-
+        if (other.tag == "DropSection")
+        {
+            _isGiving = false;
+            workerManager = null;
+            
+        }
 
     }
 

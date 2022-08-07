@@ -13,16 +13,22 @@ public class CollectManager : MonoBehaviour
     [SerializeField]
     Transform _collectPoint;
 
+
+    
     private int _boxCapacity = 10;
+
+
 
     private void OnEnable()
     {
         TriggerManager.OnBoxCollect += GetBox;
+        TriggerManager.OnBoxGive += GiveBox;
     }
 
     private void OnDisable()
     {
         TriggerManager.OnBoxCollect -= GetBox;
+        TriggerManager.OnBoxGive -= GiveBox;
     }
 
     private void GetBox()
@@ -30,19 +36,40 @@ public class CollectManager : MonoBehaviour
         if (_boxList.Count <= _boxCapacity)
         {
             GameObject temp = Instantiate(_boxPrefab,_collectPoint, true);
-            // temp.transform.localScale *= 200;
+        
 
            
             temp.transform.DOLocalMove(new Vector3(_collectPoint.transform.localPosition.x, Mathf.Abs(_boxList.Count * temp.transform.localPosition.y * 3f), _collectPoint.localPosition.z), 1f);
             temp.transform.localRotation = Quaternion.identity;
-          // temp.transform.DOMove(new Vector3(_collectPoint.transform.position.x, (_boxList.Count * temp.transform.position.y * .6f), _collectPoint.position.z), 2f);
             _boxList.Add(temp);
+            if (TriggerManager.respawnBoxes != null)
+            {
+                TriggerManager.respawnBoxes.RemoveLast();
+            }
         }
 
+    }
+
+    public void RemoveLast()
+    {
+        if (_boxList.Count > 0)
+        {
+            Destroy(_boxList[_boxList.Count - 1]);
+            _boxList.RemoveAt(_boxList.Count - 1);
+        }
+    }
+
+    private void GiveBox()
+    {
+        if (_boxList.Count > 0)
+        {
+            TriggerManager.workerManager.GetBox();
+            RemoveLast();
+        }
     }
 
 
 
 
 
-}
+}//class

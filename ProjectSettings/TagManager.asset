@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CollectArea
+  - DropSection
+  - Money
   layers:
   - Default
   - TransparentFX
